@@ -32,11 +32,11 @@ public class Dinomarket {
         
         System.out.println("4. Enter username/ e-mail");
         //driver.findElement(By.name("loginname")).clear();
-        driver.findElement(By.name("loginname")).sendKeys("rickypnugraha@gmail.com");
+        driver.findElement(By.name("loginname")).sendKeys("kunyuk@gmail.com");
         
         System.out.println("5. Enter Password");     
         driver.findElement(By.name("password")).clear();
-        driver.findElement(By.name("password")).sendKeys("polytron");
+        driver.findElement(By.name("password")).sendKeys("kunyuk");
     
         System.out.println("6. Select LOGIN button");    
         driver.findElement(By.xpath("/html/body/div[4]/div/div/table/tbody/tr[4]/td[2]/form/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[4]/td[2]/table/tbody/tr[4]/td[3]/input")).click();
