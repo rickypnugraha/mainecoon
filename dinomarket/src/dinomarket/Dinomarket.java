@@ -18,20 +18,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Dinomarket {    
     
     public static void main(String[] args) throws InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "D://SeleniumProject/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.setProperty("webdriver.chrome.driver", "D://SeleniumProject/chromedriver.exe"); // Location of chromedriver.exe in your computer
+        WebDriver driver = new ChromeDriver(); // I use chrome browser
+        driver.manage().window().maximize(); // to Maximize the page window
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
         
        
     //Scenario 1 - as a user I want to login using my registered account!
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         System.out.println("SCENARIO 1");
         System.out.println("1. Go to Dinomarket site");
         driver.navigate().to("http://www.dinomarket.com");
-        FileUtils.copyFile(scrFile, new File("C:\\Users\\HP\\Pictures\\web\\web.png"));
         
-        // Now you can do whatever you need to do with it, for example copy somewhere
         System.out.println("2. Select LOGIN button");
         driver.findElement(By.xpath("//img[contains(@src,'http://media.dinomarket.com/system/themes/th1/navup/bt_login_n_h5.png')]")).click();
         
@@ -75,11 +72,14 @@ public class Dinomarket {
         Thread.sleep(2000);
        
         
-        //Scenario 3 - as a user i want to ask the customer service using LIVE Chat menu
+        //Scenario 3 - as a user i want to go to LIVE Chat menu, so I can ask the Dinomarket CS
         System.out.println("SCENARIO 3");
         System.out.println("1. select LAYANAN LIVE CHAT menu");
         driver.findElement(By.xpath("/html/body/table/tbody/tr[1]/td/a/table/tbody/tr/td/center/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[5]/a/img[2]")).click();
         Thread.sleep(10000);
+        
+//Since the Dinomarket CS is not 24hrs ONLINE so I just stop the scenarios until this step.
+        
        
         driver.quit();
     }
